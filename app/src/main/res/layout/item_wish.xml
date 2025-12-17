@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/bg_card"
+    android:orientation="vertical"
+    android:padding="14dp">
+
+    <!-- Заголовок + дата -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Makine"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="28.10.2025"
+            android:textColor="#888888"
+            android:textSize="12sp" />
+
+        <ImageButton
+            android:id="@+id/btnDeleteArchived"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_btn_delete_circle_red"
+            android:contentDescription="Delete"
+            android:visibility="gone"
+            app:backgroundTint="@null"
+            app:srcCompat="@drawable/ic_delete"
+            app:tint="@android:color/white"
+            android:padding="8dp"
+            android:scaleType="centerInside"/>
+
+    </LinearLayout>
+
+    <!-- Рядок "İlerleme" + суми -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="İlerleme"
+            android:textColor="#9AA2A8"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="75 000 ₺ | 150 000 ₺"
+            android:textColor="#D32F2F"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Прогрес -->
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginTop="8dp"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/progress_wish" />
+
+    <!-- Кнопка-капсула -->
+    <Button
+        android:id="@+id/btnControl"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_btn_dark"
+        android:text="Arzuyu kontrol etmek"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:backgroundTint="@null" />
+
+    <!-- Панель дій -->
+    <LinearLayout
+        android:id="@+id/actionPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <!-- Верхня смуга: ₺ Para yatırmak (клік = внести суму) -->
+        <LinearLayout
+            android:id="@+id/headerMoney"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_action_header"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginEnd="8dp"
+                    app:srcCompat="@drawable/ic_money"
+                    app:tint="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Para yatırmak"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Три сегменти: Arşiv / Düzenle / Satın alındı -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal">
+
+            <!-- Arşiv -->
+            <LinearLayout
+                android:id="@+id/btnArchive"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_action_red_round"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        app:srcCompat="@drawable/ic_delete"
+                        app:tint="@android:color/white" />
+
+
+                    <ImageButton
+                        android:visibility="gone"
+                        android:id="@+id/btnDeleteActive"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/bg_btn_delete_circle_red"
+                        android:contentDescription="Delete active"
+                        android:padding="10dp"
+                        app:backgroundTint="@null"
+                        app:srcCompat="@drawable/ic_delete"
+                        app:tint="@android:color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Arşiv"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Düzenle -->
+            <LinearLayout
+                android:id="@+id/btnEdit"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_action_grey_round"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        app:srcCompat="@drawable/ic_edit"
+                        app:tint="@android:color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Düzenle"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Satın alındı -->
+            <LinearLayout
+                android:id="@+id/btnDone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_action_blue_round"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        app:srcCompat="@drawable/ic_check"
+                        app:tint="@android:color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Satın alındı"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

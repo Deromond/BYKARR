@@ -1,0 +1,110 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_bg"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <include layout="@layout/view_logo_card" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Tutar değişikliği"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_toggle"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvIncome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="24dp"
+            android:text="Gelir"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvExpense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Tüketim"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toplam" />
+
+    <EditText
+        android:id="@+id/inputAmount"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_input"
+        android:inputType="number"
+        android:padding="12dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="#9AA2A8" />
+
+    <Button
+        android:id="@+id/btnApply"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_btn_gradient"
+        android:text="Miktarı ekle"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@null" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-8492265680889801/7863958431" />
+
+    <!--    ca-app-pub-8492265680889801/7863958431     real-->
+    <!--    ca-app-pub-3940256099942544/6300978111     test-->
+</LinearLayout>

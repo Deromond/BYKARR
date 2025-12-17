@@ -1,0 +1,8 @@
+<resources>
+    <color name="screen_bg">#E6EFF6</color>
+    <color name="preloader_bg">#071B41</color>
+    <color name="tab_active">#0B2A66</color>
+    <color name="tab_inactive">#D32F2F</color>
+    <color name="tab_hint">#9AA2A8</color>
+    <color name="dark_blue">#081A3B</color>
+</resources>

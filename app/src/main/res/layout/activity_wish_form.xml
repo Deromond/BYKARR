@@ -1,0 +1,64 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_bg">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <include layout="@layout/view_logo_card"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:id="@+id/backIcon"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Yeni arzu"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <TextView android:text="Arzunun adı" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <EditText android:textColor="@android:color/black" android:textColorHint="#9AA2A8"
+            android:id="@+id/inputName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_input"
+            android:padding="12dp"
+            android:singleLine="true"/>
+
+        <TextView android:text="Maliyet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp"/>
+        <EditText android:textColor="@android:color/black" android:textColorHint="#9AA2A8"
+            android:id="@+id/inputCost"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:inputType="number"
+            android:background="@drawable/bg_input"
+            android:padding="12dp"
+            android:singleLine="true"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="İstek ekle"
+            android:textColor="@android:color/white"
+            android:background="@drawable/bg_btn_gradient"
+            android:layout_marginTop="24dp" app:backgroundTint="@null"/>
+    </LinearLayout>
+</ScrollView>
